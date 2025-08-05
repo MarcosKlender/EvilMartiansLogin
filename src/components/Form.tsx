@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 
 import { Input } from "./Input";
-import { ErrorMessage } from "./ErrorMessage";
+import { DisplayMessage } from "./DisplayMessage";
 import { Button } from "./Button";
 
 type FormProps = {
@@ -42,7 +42,7 @@ export function Form({ onSuccess }: FormProps) {
         onChange={(value) => setPassword(value)}
       />
 
-      {error && <ErrorMessage message={error} />}
+      {error && <DisplayMessage type="error" message={error} />}
 
       <Button type="submit" variant="primary">
         {loading ? "Logging in..." : "Log In"}

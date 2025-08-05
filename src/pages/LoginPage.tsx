@@ -2,7 +2,7 @@ import { Form } from "../components/Form";
 
 type LoginPageProps = {
   onLoginSuccess?: () => void;
-}
+};
 
 export function LoginPage({ onLoginSuccess }: LoginPageProps) {
   return (
