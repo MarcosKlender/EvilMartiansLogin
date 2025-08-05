@@ -1,23 +1,34 @@
 type InputProps = {
+  id: string;
+  label: string;
   type?: "text" | "email" | "password";
-  placeholder?: string;
   value?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  autoComplete?: string;
+  onChange: (value: string) => void;
 };
 
 export function Input({
+  id,
+  label,
   type = "text",
   placeholder,
   value,
+  autoComplete,
   onChange,
 }: InputProps) {
   return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      className="input"
-    />
+    <div>
+      <label htmlFor={id}>{label}</label>
+      <input
+        id={id}
+        type={type}
+        value={value}
+        placeholder={placeholder}
+        autoComplete={autoComplete}
+        onChange={(e) => onChange(e.target.value)}
+        required
+      />
+    </div>
   );
 }

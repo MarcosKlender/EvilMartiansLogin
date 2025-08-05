@@ -1,10 +1,7 @@
-import { Form } from "./components/Form";
+import { LoginPage } from "./pages/LoginPage";
 
 export function App() {
   return (
-    <>
-      <h1>Login</h1>
-      <Form />
-    </>
+      <LoginPage />
   );
 }
