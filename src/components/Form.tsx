@@ -16,6 +16,8 @@ export function Form({ onSuccess }: FormProps) {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+
+    if (loading) return;
     const success = await login(email, password);
 
     if (success && onSuccess) {
@@ -44,7 +46,7 @@ export function Form({ onSuccess }: FormProps) {
 
       {error && <DisplayMessage type="error" message={error} />}
 
-      <Button type="submit" variant="primary">
+      <Button type="submit" disabled={loading}>
         {loading ? "Logging in..." : "Log In"}
       </Button>
     </form>
