@@ -29,7 +29,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 400px;
+  min-width: 360px;
   min-height: 100vh;
 }
 
@@ -44,14 +44,12 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1.2em;
-  max-width: 400px;
+  max-width: 360px;
   width: 100%;
 }
 
 label {
   display: block;
-  font-size: 1.2em;
-  font-weight: 500;
   color: #ffffff;
   margin-bottom: 0.4em;
 }
@@ -73,6 +71,17 @@ input {
     outline: 4px auto -webkit-focus-ring-color;
     border-color: #646cff;
   }
+}
+
+.error-message {
+  border: 1px solid #ff4d4f;
+  background-color: #fff1f0;
+  color: #ff4d4f;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-align: center;
 }
 
 button {

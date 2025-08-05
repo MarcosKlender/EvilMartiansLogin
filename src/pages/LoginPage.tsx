@@ -1,10 +1,14 @@
 import { Form } from "../components/Form";
 
-export function LoginPage() {
+type LoginPageProps = {
+  onLoginSuccess?: () => void;
+}
+
+export function LoginPage({ onLoginSuccess }: LoginPageProps) {
   return (
-    <div>
+    <main>
       <h1>Welcome to EML!</h1>
-      <Form />
-    </div>
+      <Form onSuccess={onLoginSuccess} />
+    </main>
   );
 }

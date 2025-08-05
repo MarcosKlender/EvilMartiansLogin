@@ -26,7 +26,7 @@ export function Input({
         value={value}
         placeholder={placeholder}
         autoComplete={autoComplete}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(event) => onChange(event.target.value)}
         required
       />
     </div>

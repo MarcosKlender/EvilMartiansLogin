@@ -1,15 +1,26 @@
 import { useState } from "react";
+import { useLogin } from "../hooks/useLogin";
+
 import { Input } from "./Input";
+import { ErrorMessage } from "./ErrorMessage";
 import { Button } from "./Button";
 
-export function Form() {
+type FormProps = {
+  onSuccess?: () => void;
+};
+
+export function Form({ onSuccess }: FormProps) {
+  const { login, loading, error } = useLogin();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
+    const success = await login(email, password);
+
+    if (success && onSuccess) {
+      onSuccess();
+    }
   };
 
   return (
@@ -20,7 +31,7 @@ export function Form() {
         type="email"
         placeholder="marcosklender@hire.me"
         autoComplete="email"
-        onChange={setEmail}
+        onChange={(value) => setEmail(value)}
       />
       <Input
         id="password"
@@ -28,10 +39,13 @@ export function Form() {
         type="password"
         placeholder="••••••••"
         autoComplete="current-password"
-        onChange={setPassword}
+        onChange={(value) => setPassword(value)}
       />
+
+      {error && <ErrorMessage message={error} />}
+
       <Button type="submit" variant="primary">
-        Log In
+        {loading ? "Logging in..." : "Log In"}
       </Button>
     </form>
   );
