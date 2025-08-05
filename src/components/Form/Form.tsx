@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { useLogin } from "../hooks/useLogin";
+import { useLogin } from "../../hooks/useLogin";
 
-import { Input } from "./Input";
-import { DisplayMessage } from "./DisplayMessage";
-import { Button } from "./Button";
+import { Input } from "../Input/Input";
+import { DisplayMessage } from "../DisplayMessage/DisplayMessage";
+import { Button } from "../Button/Button";
+
+import styles from './Form.module.css';
 
 type FormProps = {
   onSuccess?: () => void;
@@ -26,7 +28,7 @@ export function Form({ onSuccess }: FormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <Input
         id="email"
         label="Email"

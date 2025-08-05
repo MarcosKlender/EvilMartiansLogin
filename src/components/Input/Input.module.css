@@ -1,0 +1,39 @@
+.label {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 0.4em;
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  padding: 0.4em 0.6em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  width: 100%;
+}
+
+.input:focus,
+.input:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+  border-color: #646cff;
+}
+
+@media (prefers-color-scheme: light) {
+  .label {
+    color: #213547;
+  }
+  .input {
+    background-color: #ffffff;
+    color: #213547;
+    border-color: #d9d9d9;
+  }
+  .input:focus,
+  .input:focus-visible {
+    border-color: #646cff;
+  }
+}

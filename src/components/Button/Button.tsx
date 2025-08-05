@@ -1,3 +1,5 @@
+import styles from "./Button.module.css";
+
 type ButtonProps = {
   type?: "button" | "submit" | "reset";
   variant?: "primary" | "secondary";
@@ -15,8 +17,8 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
+      className={`${styles.button} ${styles[variant]}`}
       type={type}
-      className={variant}
       onClick={onClick}
       disabled={disabled}
     >

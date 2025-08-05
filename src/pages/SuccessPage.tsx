@@ -1,5 +1,5 @@
-import { DisplayMessage } from "../components/DisplayMessage";
-import { Button } from "../components/Button";
+import { DisplayMessage } from "../components/DisplayMessage/DisplayMessage";
+import { Button } from "../components/Button/Button";
 
 type SuccessPageProps = {
   onLogout: () => void;
